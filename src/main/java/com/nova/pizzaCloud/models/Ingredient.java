@@ -1,13 +1,20 @@
 package com.nova.pizzaCloud.models;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor(force=true)
+@Entity
 public class Ingredient {
-    private final String id;
-    private final String name;
+    @Id
+    private String id;
+    private String name;
     private Type type;
 
     public enum Type {
