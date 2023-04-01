@@ -8,7 +8,7 @@
 <body>
 <h1>Design your taco!</h1>
 <img th:src="@{/images/Tako.jpg}" th:width="300" th:height="300"/>
-<form method="POST" th:object="${taco}">
+<form method="POST" th:action="@{/design}" th:object="${taco}">
     <div class="grid">
         <div class="ingredient-group" id="wraps">
             <h3>Designate your wrap:</h3>
