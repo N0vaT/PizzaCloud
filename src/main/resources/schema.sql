@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS Taco(
     created_at timestamp not null,
     order_id integer,
     PRIMARY KEY (id),
-    CONSTRAINT fk_order FOREIGN KEY (order_id) REFERENCES taco_user (id)
+    CONSTRAINT fk_order FOREIGN KEY (order_id) REFERENCES Taco_Order (id)
     );
 CREATE TABLE IF NOT EXISTS taco_ingredients
 (
