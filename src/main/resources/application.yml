@@ -1,3 +1,9 @@
+server:
+  port: 8443
+  ssl:
+    key-store: mykeys.jks
+    key-store-password: 111111
+    key-password: 111111
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/taco_cloud
