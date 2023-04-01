@@ -19,3 +19,6 @@ spring:
         auto: none
   thymeleaf:
     cache: false
+taco:
+  orders:
+  pageSize: 10
