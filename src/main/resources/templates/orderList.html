@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<h1>Design your taco!</h1>
+<img th:src="@{/images/Tako.jpg}" th:width="300" th:height="300"/>
+<div class="orderList">
+    <h3>Designate your wrap:</h3>
+    <div th:each="order : ${orders}">
+        <span th:text="${order.id} + ' ' + ${order.getUser().getUsername()} + ' ' + ${order.deliveryName} + ' ' + ${order.placedAt}">deliveryName</span><br/>
+    </div>
+</div>
+</body>
+</html>
