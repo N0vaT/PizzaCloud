@@ -45,7 +45,7 @@ public class TacoOrder implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "order_id")
     private List<Taco> tacos = new ArrayList<>();
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     private User user;
     public void addTaco(Taco taco){
         this.tacos.add(taco);
