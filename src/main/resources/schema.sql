@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS taco_ingredients;
-DROP TABLE IF EXISTS Taco;
-DROP TABLE IF EXISTS Taco_Order;
-DROP TABLE IF EXISTS taco_user;
-DROP TABLE IF EXISTS Ingredient;
+-- DROP TABLE IF EXISTS taco_ingredients;
+-- DROP TABLE IF EXISTS Taco;
+-- DROP TABLE IF EXISTS Taco_Order;
+-- DROP TABLE IF EXISTS taco_user;
+-- DROP TABLE IF EXISTS Ingredient;
 
 CREATE TABLE IF NOT EXISTS Ingredient(
     id varchar(4) not null,

@@ -15,6 +15,7 @@ public class Ingredient {
     @Id
     private String id;
     private String name;
+    @Enumerated(value = EnumType.STRING)
     private Type type;
 
     public enum Type {
