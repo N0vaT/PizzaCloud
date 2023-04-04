@@ -22,6 +22,8 @@ public class SecurityConfig {
                 .antMatchers("/","/**").permitAll()
                 .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/design", true)
-                .and().build();
+                .and()
+                .cors().and().csrf().disable()
+                .build();
     }
 }

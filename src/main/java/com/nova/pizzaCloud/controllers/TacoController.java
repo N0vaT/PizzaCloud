@@ -2,6 +2,7 @@ package com.nova.pizzaCloud.controllers;
 
 import com.nova.pizzaCloud.models.Taco;
 import com.nova.pizzaCloud.repository.TacoRepository;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
@@ -21,10 +22,27 @@ public class TacoController {
     }
 
     @GetMapping(params = "recent")
-    public Iterable<Taco> recentTacos(){
+    public Iterable<Taco> recentTacos() {
         PageRequest page = PageRequest.of(0, 12, Sort.by("createdAt").descending());
         return tacoRepository.findAll(page).getContent();
     }
+
+    @PostMapping(consumes = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Taco postTaco(@RequestBody Taco taco) {
+        System.out.println(taco);
+        return tacoRepository.save(taco);
+    }
+
+    @DeleteMapping("/{orderId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteOrder(@PathVariable("orderId") Long orderId) {
+        try {
+            tacoRepository.deleteById(orderId);
+        } catch (EmptyResultDataAccessException e) {
+        }
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Taco> tacoById(@PathVariable("id") Long id) {
         Optional<Taco> optTaco = tacoRepository.findById(id);
