@@ -1,4 +1,4 @@
-package com.nova.pizzaCloud.controllers;
+package com.nova.pizzaCloud.controllers.api;
 
 import com.nova.pizzaCloud.models.Taco;
 import com.nova.pizzaCloud.repository.TacoRepository;

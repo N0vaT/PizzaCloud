@@ -1,4 +1,4 @@
-package com.nova.pizzaCloud.controllers;
+package com.nova.pizzaCloud.controllers.api;
 
 import com.nova.pizzaCloud.models.Ingredient;
 import com.nova.pizzaCloud.repository.IngredientRepository;
